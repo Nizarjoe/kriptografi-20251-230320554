@@ -197,7 +197,7 @@ Katz, J., & Lindell, Y. (2020). Introduction to Modern Cryptography (3rd ed.). C
 ## 10. Commit Log
 ```
 commit 
-Author: Muhammad Nizar Asagaf <nizar@example.com>
+Author: Muhammad Nizar Asagaf <joenizar470@gmail.com>
 Date:   2025-10-06
 
     week1-intro-cia: week1-intro-cia
