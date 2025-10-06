@@ -1,0 +1,12 @@
+# Abaikan virtual environment
+env/
+
+# Abaikan file konfigurasi sensitif
+.env
+
+# Abaikan file Python yang tidak penting
+__pycache__/
+*.pyc
+
+# Abaikan cache VSCode
+.vscode/
