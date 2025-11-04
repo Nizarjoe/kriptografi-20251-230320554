@@ -1,9 +1,9 @@
 # Laporan Praktikum Kriptografi
 Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Topik: Implementasu Chipher Modern  
+Nama: MUHAMMAD NIZAR ASAGAF  
+NIM: 230320554  
+Kelas: 5DSRA  
 
 ---
 
