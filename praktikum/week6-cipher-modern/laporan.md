@@ -1,5 +1,5 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
+Minggu ke-: 6  
 Topik: Implementasu Chipher Modern  
 Nama: MUHAMMAD NIZAR ASAGAF  
 NIM: 230320554  
