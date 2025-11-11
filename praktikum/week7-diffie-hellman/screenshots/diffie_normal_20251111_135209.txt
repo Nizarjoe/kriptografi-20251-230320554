@@ -1,0 +1,16 @@
+Waktu: 2025-11-11T13:52:09.591168
+-- SIMULASI DIFFIE-HELLMAN (NORMAL) --
+p = 23, g = 5
+
+Alice:
+  private a = 13
+  public  A = 21
+
+Bob:
+  private b = 13
+  public  B = 21
+
+Shared secrets:
+  Alice menghitung shared = 19
+  Bob   menghitung shared = 19
+  Match = True
