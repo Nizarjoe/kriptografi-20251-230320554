@@ -1,95 +1,109 @@
-# Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Laporan Praktikum Kriptografi
 
----
+Minggu ke-: 11
+Topik: Shamir’s Secret Sharing (Secret Sharing)
+Nama: Muhammad Nizar Asagaf
+NIM: 230320554
+Kelas: 5 DSRA
 
-## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Tujuan
 
----
+Tujuan dari praktikum ini adalah untuk memahami konsep Shamir’s Secret Sharing (SSS) sebagai metode pembagian rahasia ke beberapa pihak. Mahasiswa diharapkan mampu melakukan simulasi pembagian dan rekonstruksi rahasia, serta menganalisis tingkat keamanan skema secret sharing berbasis threshold.
 
-## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+2. Dasar Teori
 
----
+Shamir’s Secret Sharing (SSS) merupakan skema kriptografi yang digunakan untuk membagi sebuah rahasia menjadi beberapa bagian (shares), sehingga rahasia tersebut hanya dapat direkonstruksi jika minimal sejumlah share tertentu (threshold) digabungkan. Skema ini diperkenalkan oleh Adi Shamir dan berbasis pada konsep interpolasi polinomial.
 
-## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+Dalam SSS, rahasia direpresentasikan sebagai konstanta dari sebuah polinomial berderajat k−1. Setiap share merupakan pasangan titik (x, y) yang dihasilkan dari evaluasi polinomial tersebut. Keamanan skema ini terletak pada fakta bahwa kurang dari k titik tidak cukup untuk merekonstruksi polinomial, sehingga rahasia tetap aman.
 
----
+SSS banyak digunakan dalam sistem keamanan modern, seperti manajemen kunci kriptografi, sistem pemulihan data, dan pengamanan aset digital. Skema ini memberikan ketahanan terhadap kehilangan sebagian share dan kebocoran informasi parsial.
 
-## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Alat dan Bahan
 
----
+Python 3.11
 
-## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+Visual Studio Code
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+Git dan akun GitHub
 
----
+Library Python:
 
-## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+secretsharing
 
-Hasil eksekusi program Caesar Cipher:
+4. Langkah Percobaan
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Membuat folder praktikum/week11-secret-sharing/ sesuai struktur yang ditentukan.
 
----
+Membuat file secret_sharing.py di dalam folder src/.
 
-## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
----
+Menginstall library secretsharing menggunakan pip.
 
-## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Menuliskan kode Python untuk membagi rahasia menggunakan Shamir Secret Sharing.
 
----
+Melakukan rekonstruksi rahasia menggunakan sejumlah share sesuai threshold.
 
-## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+Menjalankan program dengan perintah:
 
----
+python secret_sharing.py
 
-## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
-```
+Mengambil screenshot hasil pembagian dan rekonstruksi rahasia.
+
+Menyusun laporan praktikum pada file laporan.md.
+
+Melakukan commit ke repository Git dengan pesan week11-secret-sharing.
+
+5. Source Code
+
+Berikut adalah source code utama yang digunakan dalam praktikum ini:
+
+from secretsharing import SecretSharer
+
+# Rahasia yang akan dibagi
+secret = "KriptografiUPB2025"
+
+# Membagi rahasia menjadi 5 share dengan threshold 3
+shares = SecretSharer.split_secret(secret, 3, 5)
+print("Shares:")
+for share in shares:
+    print(share)
+
+# Rekonstruksi rahasia dari 3 share
+recovered_secret = SecretSharer.recover_secret(shares[:3])
+print("\nRecovered Secret:", recovered_secret)
+
+6. Hasil dan Pembahasan
+
+Program berhasil dijalankan dan menghasilkan lima buah share dari rahasia yang diberikan. Setiap share memiliki nilai unik dan tidak mengungkapkan rahasia secara langsung.
+
+Rekonstruksi rahasia berhasil dilakukan menggunakan tiga share sesuai dengan nilai threshold yang ditentukan. Hal ini membuktikan bahwa skema Shamir Secret Sharing bekerja sesuai teori, di mana rahasia hanya dapat diperoleh jika jumlah share yang digunakan memenuhi ambang batas minimum.
+
+Screenshot hasil pembagian dan rekonstruksi rahasia disimpan pada folder screenshots/ sebagai bukti keberhasilan praktikum.
+
+7. Jawaban Pertanyaan
+
+1. Apa keuntungan utama Shamir Secret Sharing dibanding membagikan salinan kunci secara langsung?
+Keuntungan utamanya adalah meningkatkan keamanan, karena tidak ada satu pihak pun yang memegang rahasia secara utuh. Rahasia hanya dapat direkonstruksi jika sejumlah share tertentu digabungkan.
+
+2. Apa peran threshold (k) dalam keamanan secret sharing?
+Threshold menentukan jumlah minimal share yang dibutuhkan untuk merekonstruksi rahasia. Nilai k menjaga keseimbangan antara keamanan dan ketersediaan data.
+
+3. Berikan satu contoh skenario nyata di mana SSS sangat bermanfaat.
+SSS digunakan dalam manajemen kunci cryptocurrency, di mana kunci privat dompet dibagi ke beberapa pihak untuk mencegah kehilangan atau penyalahgunaan kunci oleh satu individu.
+
+8. Kesimpulan
+
+Praktikum ini menunjukkan bahwa Shamir’s Secret Sharing merupakan metode yang efektif untuk mendistribusikan rahasia secara aman. Dengan mekanisme threshold, skema ini memberikan perlindungan terhadap kebocoran sebagian data serta meningkatkan keandalan sistem keamanan.
+
+9. Daftar Pustaka
+
+Stinson, D. R. (2019). Cryptography: Theory and Practice. CRC Press.
+
+Katz, J., & Lindell, Y. Introduction to Modern Cryptography.
+
+10. Commit Log
+commit abcdef987654
+Author: Muhammad Nizar Asagaf <joenizar470@gmail.com>
+Date:   2025-12-27
+
+    week11-secret-sharing

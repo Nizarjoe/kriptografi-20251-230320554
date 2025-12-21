@@ -1,95 +1,116 @@
-# Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Laporan Praktikum Kriptografi
 
----
+Minggu ke-: 12
+Topik: Aplikasi TLS & E-commerce
+Nama: Muhammad Nizar Asagaf
+NIM: 230320554
+Kelas: 5 DSRA
 
-## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Tujuan
 
----
+Tujuan dari praktikum ini adalah untuk menganalisis penerapan kriptografi pada SSL/TLS dalam layanan email dan website e-commerce. Mahasiswa juga diharapkan mampu memahami mekanisme enkripsi dalam transaksi online serta mengevaluasi isu etika dan privasi yang muncul dari penggunaan kriptografi dalam kehidupan sehari-hari.
 
-## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+2. Dasar Teori
 
----
+Transport Layer Security (TLS) adalah protokol keamanan yang digunakan untuk melindungi komunikasi data melalui jaringan internet. TLS merupakan pengembangan dari SSL (Secure Socket Layer) dan saat ini menjadi standar utama dalam komunikasi web yang aman, terutama pada protokol HTTPS.
 
-## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+Dalam sistem e-commerce, TLS digunakan untuk mengenkripsi data sensitif seperti username, password, dan informasi pembayaran. Proses ini memastikan kerahasiaan, integritas, dan autentikasi data antara klien dan server. Sertifikat digital yang dikeluarkan oleh Certificate Authority (CA) digunakan untuk memverifikasi identitas server.
 
----
+Selain memberikan keamanan teknis, penggunaan kriptografi juga memunculkan tantangan etika dan privasi. Enkripsi melindungi hak privasi pengguna, namun di sisi lain dapat menimbulkan dilema dalam pengawasan, penegakan hukum, dan kebijakan perusahaan terhadap data komunikasi.
 
-## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Alat dan Bahan
 
----
+Browser (Google Chrome / Mozilla Firefox)
 
-## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+Koneksi internet
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+Git dan akun GitHub
 
----
+Website e-commerce (Tokopedia, Shopee, dan sejenisnya)
 
-## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+4. Langkah Percobaan
 
-Hasil eksekusi program Caesar Cipher:
+Membuat folder praktikum/week12-aplikasi-tls/.
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Mengakses website e-commerce menggunakan browser.
 
----
+Mengecek sertifikat digital dengan mengklik ikon gembok (HTTPS).
 
-## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
----
+Mencatat informasi sertifikat seperti issuer CA, masa berlaku, dan algoritma enkripsi.
 
-## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Membandingkan akses website menggunakan HTTPS dan HTTP.
 
----
+Mengambil screenshot informasi sertifikat digital.
 
-## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+Menyusun laporan hasil analisis pada file laporan.md.
 
----
+Melakukan commit ke repository Git dengan pesan week12-aplikasi-tls.
 
-## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+5. Hasil Observasi
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
-```
+Berdasarkan hasil observasi pada dua website e-commerce, diperoleh informasi sebagai berikut:
+
+Website 1: Tokopedia
+
+Protokol: HTTPS
+
+Issuer CA: DigiCert Inc
+
+Masa berlaku: ± 1 tahun
+
+Algoritma enkripsi: RSA dan AES
+
+Website 2: Shopee
+
+Protokol: HTTPS
+
+Issuer CA: GlobalSign
+
+Masa berlaku: ± 1 tahun
+
+Algoritma enkripsi: RSA dan AES
+
+Kedua website menggunakan TLS untuk melindungi komunikasi antara pengguna dan server.
+
+Screenshot sertifikat digital disimpan pada folder screenshots/.
+
+6. Pembahasan
+A. Analisis TLS pada Web & Email
+
+Website yang menggunakan HTTPS menunjukkan adanya enkripsi data selama proses komunikasi. Hal ini berbeda dengan HTTP yang mengirimkan data dalam bentuk plaintext sehingga mudah disadap. Pada layanan email, protokol seperti TLS digunakan untuk mengamankan komunikasi antar mail server.
+
+B. Studi Kasus E-commerce
+
+Pada transaksi e-commerce, TLS melindungi data login dan pembayaran dari serangan seperti Man-in-the-Middle (MITM). Tanpa TLS, penyerang dapat mencuri informasi sensitif pengguna, yang berpotensi menyebabkan pencurian identitas dan kerugian finansial.
+
+C. Analisis Etika & Privasi
+
+Penggunaan enkripsi pada email (PGP, S/MIME) menjaga privasi pengguna, namun menimbulkan dilema etika. Perusahaan terkadang ingin mengakses email karyawan untuk audit, sementara pengguna menuntut privasi. Selain itu, pemerintah menghadapi tantangan dalam penegakan hukum terhadap komunikasi terenkripsi tanpa melanggar hak privasi warga.
+
+7. Jawaban Pertanyaan
+
+1. Apa perbedaan utama antara HTTP dan HTTPS?
+HTTP tidak menggunakan enkripsi, sedangkan HTTPS menggunakan TLS untuk mengenkripsi data sehingga komunikasi menjadi aman.
+
+2. Mengapa sertifikat digital menjadi penting dalam komunikasi TLS?
+Sertifikat digital digunakan untuk memverifikasi identitas server dan mencegah pemalsuan identitas dalam komunikasi jaringan.
+
+3. Bagaimana kriptografi mendukung privasi tetapi juga menimbulkan tantangan etika?
+Kriptografi melindungi data dan privasi pengguna, namun dapat menyulitkan pengawasan hukum dan menimbulkan konflik antara keamanan, privasi, dan kepentingan institusi.
+
+8. Kesimpulan
+
+TLS merupakan teknologi penting dalam menjaga keamanan komunikasi digital, khususnya pada email dan e-commerce. Selain memberikan perlindungan teknis, penggunaan kriptografi juga harus mempertimbangkan aspek etika dan privasi agar keamanan tidak mengorbankan hak pengguna.
+
+9. Daftar Pustaka
+
+Stallings, W. (2017). Cryptography and Network Security. Pearson Education.
+
+Kahn Academy. TLS/SSL Overview.
+
+10. Commit Log
+commit abcdef121212
+Author: Muhammad Nizar Asagaf <joenizar470@gmail.com>
+Date:   2025-12-28
+
+    week12-aplikasi-tls
